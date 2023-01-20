@@ -271,7 +271,7 @@ class Solution {
 }
 
  
- A
+A
 AB
 ABC
 ABCD
@@ -374,3 +374,100 @@ class Solution {
     
     
     
+1                 1
+1 2             2 1
+1 2 3         3 2 1
+1 2 3 4     4 3 2 1
+1 2 3 4 5 5 4 3 2 1
+class Solution {
+
+    void printTriangle(int n) {
+        for(int i=1;i<=n;i++)
+        {
+            int nums=i<=n?i:2*n-i;
+            printnum1(nums);
+            int space=i<=n?4*(n-i):2*(i-n);
+            printspace(space);
+            printnum2(nums);
+            System.out.println();
+        }
+    }
+       
+    void printnum1(int n)
+    {
+        for(int i=1;i<=n;i++)
+        {
+        System.out.print(i+" ");
+        }
+    }
+    void printspace(int n)
+    {
+        for(int i=0;i<n;i++)
+        {
+        System.out.print(" ");
+        
+    }}
+    void printnum2(int n)
+    {
+        for(int i=n;i>=1;i--)
+        {
+          System.out.print(i+" ");  
+        }
+    }
+
+}
+
+
+*********
+ *******
+  *****
+   ***
+    *
+    class Solution {
+
+    void printTriangle(int n) {
+        for(int i=1;i<=n;i++)
+        {
+            for(int j=1;j<i;j++)
+            {
+                System.out.print(" ");
+            }
+            for(int j=1;j<=2*(n-i)+1;j++)
+            {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+****
+*  *
+*  *
+****
+class Solution {
+
+    void printSquare(int n) {
+        for(int i=1;i<=n;i++)
+        {
+            for(int j=1;j<=n;j++)
+            {
+            if(i==1||i==n)
+            System.out.print("*");
+            else
+            {
+            if(j==1||j==n)
+                {
+                    System.out.print("*");
+                }
+                else
+                System.out.print(" ");
+            }
+            }
+            System.out.println();
+        
+        
+        }  
+    }
+}
