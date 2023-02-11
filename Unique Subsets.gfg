@@ -1,0 +1,25 @@
+class solve
+{
+        public static void subset(int[] num,int index,ArrayList<Integer> ss,ArrayList<ArrayList<Integer>> ans)
+        {
+            ans.add(new ArrayList<>(ss));
+            for(int i=index;i<num.length;i++)
+            {
+                if(i>index && num[i]==num[i-1])
+                {
+                    continue;
+                }
+                ss.add(num[i]);
+                subset(num,i+1,ss,ans);
+                ss.remove(ss.size()-1);
+            }
+        }
+        public static ArrayList <ArrayList <Integer>> AllSubsets(int arr[], int n)
+    {
+        Arrays.sort(arr);
+        ArrayList<Integer> ss=new ArrayList<>();
+        ArrayList<ArrayList<Integer>> ans=new ArrayList<ArrayList<Integer>>();
+        subset(arr,0,ss,ans);
+        return ans;
+  }  }
+
